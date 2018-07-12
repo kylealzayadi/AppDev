@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { initDomAdapter } from '../../../node_modules/@angular/platform-browser/src/browser';
-import { GESTURE_PRIORITY_TOGGLE } from '../../../node_modules/ionic-angular/umd/gestures/gesture-controller';
 
 @Component({
   selector: 'page-home',
@@ -22,14 +20,13 @@ ionViewDidLoad(){
 }
 
 initMap(){
-  let latLng = new google.maps.LatLng(-34,0224, 118,2851);
+  let latLng = new google.maps.LatLng(34.02236, -118.28516,);
   
   let mapOptions = {
     center: latLng,
-    zoom: 15,
+    zoom: 16,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 }
-
+this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+}
 }

@@ -1,11 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Camera
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <button ion-button full (click)="takePhoto()">
+    <ion-icon name="camera"></ion-icon> &nbsp; &nbsp;Take Photo</button>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let Photo of photos; let id = index" >  
+
+        <ion-card class="block">
+          <ion-icon name="trash" class="deleteIcon" (click)="deleteIcon()"></ion-icon>
+          <img [src]="photo" *ngIf="photo">
+        </ion-card>
+
+      </ion-col>
+
+
+    </ion-row>
+
+
+  </ion-grid>
+
 
 </ion-content>
